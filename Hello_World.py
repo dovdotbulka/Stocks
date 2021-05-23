@@ -4,11 +4,14 @@ import pandas as pd
 import pandas_datareader.data as web
 
 def run(start, end, ticker, v):
-    start = dt.datetime(2015, 1, 1)
-    end = dt.datetime.now()
-    df = web.DataReader("TSLA", 'yahoo', start, end)
+    try:
+        df = web.DataReader(ticker, 'yahoo', start, end)
+    except:
+    	print("Bad ticker..." + ticker)
+    	return
+
     print(df.head())
-    df.to_csv('TSLA.csv')
+    df.to_csv('{}.csv'.format(ticker))
 
 def main():
 

@@ -16,7 +16,7 @@ def run(start, end, ticker, v):
 def main():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-s", "--start", default='2015-01-01', help="starting date")
+    parser.add_argument("-s", "--start", default='2005-01-01', help="starting date")
     parser.add_argument("-e", "--end", default='2020-12-31', help="end date")
     parser.add_argument("-t", "--ticker", default='TSLA', help="stock ticker")
     parser.add_argument("-v", "--verbosity", action="count", default=0,

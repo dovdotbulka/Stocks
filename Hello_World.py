@@ -23,12 +23,13 @@ def ticker_universe(ticker_file, verbose):
 		
 
 def run(start, end, ticker, ticker_file, verbose):
-	ticker_universe(ticker_file, verbose)
+	#ticker_universe(ticker_file, verbose)
 	if not os.path.exists('stock_dfs/{}.csv'.format(ticker)):
 		try:
 			df = web.DataReader(ticker, 'yahoo', start, end)
-		except:
+		except Exception as e:
 			print("Bad ticker..." + ticker)
+			print(e)
 			return
 
 		print(df.head())

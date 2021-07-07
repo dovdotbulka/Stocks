@@ -7,6 +7,13 @@ import pickle
 import os
 import requests
 
+### This is of little use currently as the Yahoo Finance API
+### no longer works so we cannot go and programmatically get 
+### historical quotes for a given list of tickers.
+### For now, we are populating the quotes directory by
+### downloading the CSV file manually, one at a time from
+### Yahoo Finance.
+
 # Build a collection of dataframes for stocks that we can slice and dice later.
 # This will be the universe of our stocks. 
 # Keep all dataframes in a separate directory.
